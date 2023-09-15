@@ -33,6 +33,8 @@ class MagicCursor {
   }
 
   applyStyles() {
+
+   
     const {
       invert,
       backgroundColor,
