@@ -1,28 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="main">
-        
-            <p>introducing - magicCursor.js</p>
-           
-       </div>
-       <div class="main">
-           made with 💖 @aneeshawadhiya
-       </div>
-    </div>
-    
-    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="magic-cursor.js"></script>
+    <script>
 
-    <script src="magic-cursor.js" ></script>
-    <script>        
-        const magicCursor = new MagicCursor({backgroundColor:"white",borderColor:"white"});
+        document.addEventListener("DOMContentLoaded", function () {
+            const blockDiv = document.getElementById("blockDiv");
+            const accessButton = document.getElementById("accessButton");
+          
+            // Function to remove the blockDiv and enable scrolling
+            function accessSite() {
+              blockDiv.style.display = "none";
+              document.body.style.overflow = "auto"; // Enable scrolling
+              const magicCursor = new MagicCursor({
+                backgroundColor: "white",
+                borderColor: "white",
+              });
+
+            }
+          
+            // Attach a click event listener to the access button
+            accessButton.addEventListener("click", accessSite);
+          
+            // Disable scrolling until the button is clicked
+            document.body.style.overflow = "hidden";
+          });
+       
+      
     </script>
-</body>
+
+    <div class="blockDiv" id="blockDiv"><button><span class="accessButton button_top" id="accessButton" onclick="accessSite()">Do the Magic</span></button></div>
+
+    <div class="container">
+        
+      <div class="main">
+        <p>introducing - magicCursor.js</p>
+      </div>
+      <div class="terminalContainer">
+        <div class="fakeMenu">
+            <div class="fakeButtons fakeClose"></div>
+            <div class="fakeButtons fakeMinimize"></div>
+            <div class="fakeButtons fakeZoom"></div>
+          </div>
+          <div class="fakeScreen">
+            <p class="title">🚀 Introducing the Magic Cursor JavaScript Library - magicCursor.js ! 🚀</p>
+            <p class="content">Are you ready to add a touch of magic to your website's cursor? Look no further! With the Magic Cursor library, you can transform your cursor into an eye-catching design element that will make your web design truly stand out.</p>
+          
+            <p class="title">🤝 Join the Magic Cursor Community:</p>
+            <p class="content">Magic Cursor is more than just a library; it's a vibrant community-driven project. We invite developers, designers, and enthusiasts from around the world to join us on this exciting journey of creating a beautiful cursor library for JavaScript. Your creativity and ideas can help shape the future of web design.</p>
+          
+            <p class="title">🔗 Get Started in 3 Simple Steps:</p>
+            <p class="content">Adding the Magic Cursor to your website is a breeze! Follow these simple steps:</p>
+
+            <p class="content">1. Add the script onto your html code:</p>
+           
+            <pre class="code"><code>&lt;script src="https://cdn.jsdelivr.net/gh/aneeshawadhiya/magic-cursor.js/magic-cursor.js"&gt;&lt;/script&gt;</code></pre>
+            
+            <p class="content">2. Initialize the library in your JavaScript code:</p>
+            <!-- <p class="code">javascript</p> -->
+           
+            <pre class="code"><code>const magicCursor = new MagicCursor();</code></pre>
+            <p class="content">That's it! Your cursor will now have a stylish makeover, and you can further customize it to match your website's design.</p>
+          
+            <p class="title">🔮 Key Features:</p>
+            <ul class="content">
+              <li>Easy setup with just one script tag</li>
+              <li>Customizable cursor design</li>
+              <li>Hover effects for interactive elements     -------- coming sooonn!!!</li>
+              <li>Smooth animations</li>
+              <li>And much more!</li>
+            </ul>
+          
+            <p class="title">🌟 Contribute to Magic Cursor:</p>
+            <p class="content">We thrive on collaboration and innovation. You can be part of the Magic Cursor journey by:</p>
+            <ul class="content">
+              <li>Reporting issues, sharing ideas, or suggesting improvements on our GitHub repository.</li>
+              <li>Enhancing the library with your code or creative designs. Every contribution counts!</li>
+            </ul>
+            <p class="content">Enhance the user experience and make your website unforgettable with the Magic Cursor library. Try it today, and let the magic begin! ✨</p>
+          
+            <p class="title">📦 CDN Link:</p>
+            <p class="code"><a href="https://cdn.jsdelivr.net/gh/aneeshawadhiya/magic-cursor.js/magic-cursor.js">https://cdn.jsdelivr.net/gh/aneeshawadhiya/magic-cursor.js/magic-cursor.js</a></p>
+          
+            <p class="title">🚀 GitHub Repository:</p>
+            <p class="code"><a href="https://github.com/aneeshawadhiya/magic-cursor.js">https://github.com/aneeshawadhiya/magic-cursor.js</a></p>
+          
+            <p class="content">Let's collaborate and create something extraordinary together! Join the Magic Cursor community and help us shape the future of web design. 🌐✨</p>
+          
+           
+          </div>
+          
+      </div>
+    </div>
+  </body>
 </html>
