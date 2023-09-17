@@ -34,7 +34,7 @@ class MagicCursor {
 
   applyStyles() {
 
-   
+
     const {
       invert,
       backgroundColor,
@@ -43,6 +43,9 @@ class MagicCursor {
       borderColor,
       outlineWidth,
       outlineHeight,
+      outerBorderType = 'solid',
+      outerBorderWidth = '1px',
+      playButton = false,
     } = this.styles;
 
     // Invert the background color and border color
@@ -51,12 +54,18 @@ class MagicCursor {
 
     // Apply CSS styles to cursorDot
     this.cursorDot.style.mixBlendMode = "difference";
-    this.cursorDot.style.backgroundColor = invertedBackgroundColor;
-    this.cursorDot.style.width = width;
-    this.cursorDot.style.height = height;
+    this.cursorDot.style.backgroundColor = playButton ? 'transparent' : invertedBackgroundColor;
+    this.cursorDot.style.width = playButton ? "0" : width;
+    this.cursorDot.style.height = playButton ? "0" : height;
     this.cursorDot.style.top = 0;
     this.cursorDot.style.left = 0;
-    this.cursorDot.style.borderRadius = "50%";
+    if (playButton) {
+      this.cursorDot.style.borderTop = `15px solid transparent`;
+      this.cursorDot.style.borderLeft = `20px solid ${invertedBackgroundColor}`;
+      this.cursorDot.style.borderBottom = `15px solid transparent`;
+    } else {
+      this.cursorDot.style.borderRadius = "50%";
+    }
     this.cursorDot.style.zIndex = "10";
     this.cursorDot.style.pointerEvents = "none";
     this.cursorDot.style.position = "absolute";
@@ -64,7 +73,7 @@ class MagicCursor {
 
     // Apply CSS styles to cursorOutline
     this.cursorOutline.style.mixBlendMode = "difference";
-    this.cursorOutline.style.border = `1px solid ${invertedBorderColor}`; // Use the inverted border color
+    this.cursorOutline.style.border = `${outerBorderWidth} ${outerBorderType} ${invertedBorderColor}`; // Use the inverted border color
     // this.cursorOutline.style.backgroundColor = invertedBackgroundColor; // Use the inverted background color
     this.cursorOutline.style.width = outlineWidth;
     this.cursorOutline.style.height = outlineHeight;
